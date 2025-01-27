@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://mhu64vaduqus"]
+[gd_scene load_steps=3 format=3 uid="uid://mhu64vaduqus"]
 
 [ext_resource type="Texture2D" uid="uid://cgivvcnaugv22" path="res://icons/icon.png" id="1_fn0km"]
+[ext_resource type="Script" path="res://tscn/Mymenu.cs" id="1_i214l"]
 
 [node name="menu" type="Node2D"]
+script = ExtResource("1_i214l")
 
 [node name="main" type="Sprite2D" parent="."]
 position = Vector2(362, 204)
