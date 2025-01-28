@@ -1,11 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://mhu64vaduqus"]
+[gd_scene load_steps=4 format=3 uid="uid://mhu64vaduqus"]
 
 [ext_resource type="Texture2D" uid="uid://cgivvcnaugv22" path="res://icons/icon.png" id="1_fn0km"]
 [ext_resource type="Script" path="res://tscn/Mymenu.cs" id="1_i214l"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_6vepi"]
+script/source = "using Godot;
+using System;
+
+public partial class Button1 : Button
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_i214l")
 
 [node name="main" type="Sprite2D" parent="."]
-position = Vector2(362, 204)
+position = Vector2(366, 206)
 texture = ExtResource("1_fn0km")
+
+[node name="Button1" type="Button" parent="."]
+offset_left = 636.0
+offset_top = 14.0
+offset_right = 719.0
+offset_bottom = 45.0
+text = "关闭"
+script = SubResource("CSharpScript_6vepi")
+
+[connection signal="button_up" from="Button1" to="." method="closeAll"]
